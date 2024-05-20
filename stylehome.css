@@ -1,0 +1,499 @@
+:root {
+  --marginsz: 5%;
+  --paddingsz: 5%;
+  --widthsz: 90%;
+}
+
+/* Changing the border for selected */
+@keyframes borderselect- {
+  from {
+    box-sizing: border-box; border: 3px solid;
+   
+}
+  
+  to {  box-sizing: border-box;
+    border: 3px solid black;
+    background-color: lightgreen;
+  
+
+  }
+}
+
+
+@keyframes highlight- {
+  from {
+    font-weight: 100;
+  }
+  to {
+    font-weight: bold; 
+  }
+}
+
+/* I made this for practice I think this page would have been fine without keyframes entirely */
+
+@keyframes rotw {
+  0%, 50%, 100% {
+color: lightgreen; font-weight: bold;
+opacity: 1; text-align: center;
+}
+25%, 75% { color: green; opacity: 0.25; 
+text-align: left;
+}
+40%, 80% { 
+color: black; opacity: 0.75; 
+text-align: right;
+}
+/* Takin it back to the late 90s where web design was at it's best... */
+}
+
+.rotw{ animation: rotw 3s ease-in-out  infinite reverse;
+margin: var(--marginsz);
+}
+
+
+
+
+span{
+margin-left: auto;
+margin-right: auto;
+ }
+ 
+
+.menu{background-color: lightgreen;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.row{
+padding: 2%;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+
+}
+
+
+
+
+body {
+  background-image: url("images/Avocado\ Background.png");
+ background-size: cover;
+}
+
+.white {
+  background-color: white;
+  margin: var(--marginsz);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Add a shadow */
+}
+
+.nav {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1); /* Add a shadow */
+  width: 18%;
+  text-align: center;
+  justify-content: center;
+  border: 3px solid transparent; 
+  box-sizing: border-box; 
+  background-color: rgb(255, 255, 255);
+}
+.nav:hover {
+ animation: borderselect- 0.5s forwards; cursor: pointer; box-sizing: border-box; 
+}
+
+
+h1 {
+  padding-top: var(--paddingsz);
+  display: block;
+  width: var(--widthsz);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  font-family: "Red Hat Display", sans-serif;
+}
+.image {
+  display: block;
+  width: calc(var(--widthsz)); /* Adjusting the size for the image */
+  height: auto;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Add a shadow */
+  object-fit: fill; /* Or "contain" or "fill" */
+}
+
+.ingredients,
+.instructions {
+  display: block;
+  width: var(--widthsz);
+  height: auto;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.seops {
+  padding-bottom: var(--paddingsz);
+}
+
+.page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: var(--widthsz);
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+article {
+  display: block;
+  width: 90%;
+  background-color: white;
+
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 10%;
+  margin-left: var(--marginsz);
+  margin-right: var(--marginsz);
+  padding-top: calc(var(--paddingsz) - 2%);
+  padding-bottom: calc(var(--paddingsz) - 2%);
+
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.header a {
+  text-decoration: none;
+  color: inherit;
+ 
+}
+
+footer {
+  text-align: center;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+/* Medium screens */
+@media only screen and (max-width: 800px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: var(--widthsz);
+    padding-bottom: 10%;
+  }
+  /* To use more real estate */
+  .ingredients,
+  .instructions {
+    display: block;
+    width: var(--widthsz);
+    height: auto;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .nav {
+    width: calc(var(--widthsz) - 5%);
+    min-height: 25%;
+
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: max-content;
+  }
+
+  /* Easier to read from the left  */
+  h1,
+  h2 {
+    text-align: left;
+  }
+}
+/* On small devices I want this stacked
+I also put the home button on the top
+*/
+
+@media only screen and (max-width: 600px) {
+  .header {
+    display: flex;
+    flex-direction: column-reverse;
+    width: var(--widthsz);
+    height: fit-content;
+    justify-content: space-between;
+    text-align: center;
+    padding-bottom: var(--paddingsz);
+  }
+
+  .nav {
+    padding: 1%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1); /* Add a shadow */
+    width: calc(var(--widthsz) - 5%);
+    text-align: center;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: medium;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-align: center;
+  }
+  h1 {
+    font-size: 0.65cm;
+  }
+  .page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: var(--widthsz);
+  }
+
+  .image {
+    min-height: 45%;
+    padding-bottom: 5%;
+  }
+
+  /* To use more real estate */
+  .ingredients,
+  .instructions {
+    display: block;
+    width: var(--widthsz);
+    height: auto;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  article {
+    display: block;
+    width: var(--widthsz);
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+
+/* Selected Nav Item */
+.nav:hover {
+  border-width: 3px; /* Increase border thickness on hover */
+  animation: borderselect- 0.5s forwards;
+
+  cursor: pointer; /* Change the cursor to a hand pointer on hover */
+}
+
+/* None of these look good */
+.tumblr :hover {
+  animation: highlight- 0.5s ease-in-out infinite alternate;
+}
+}
+
+
+
+.frontpage .frontaside {
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}.frontpage{
+display: flex;
+margin: auto;
+flex-direction: column;
+padding-top: 5%;
+background-color: light
+
+}
+.tumblr {
+margin: auto;
+text-align: center;
+padding: 2%;
+
+
+
+
+
+transition: box-shadow 0.5s ease-in-out; /* Transition for smooth shadow effect */
+
+
+}
+
+
+
+/* Change Me */
+.tumblr :hover {
+
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); /* Drop shadow styles */
+
+}
+.thumbnail{
+width: 100%;
+padding: 1%;
+
+}
+.image-container {
+  position: relative; /* Needed for positioning the overlay */
+  overflow: hidden;
+  padding: 3%;
+}
+
+.text-overlay {
+  position: absolute; /* Absolute positioning for the overlay */
+  top: 50%; /* Center the overlay vertically */
+  left: 50%; /* Center the overlay horizontally */
+  transform: translate(-50%, -50%); /* Offset the overlay for centering */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  color: white; /* White text color for better readability */
+  padding: 10px; /* Padding for the text content */
+  opacity: 0; /* Hide the overlay initially */
+  transition: opacity 0.2s ease-in-out; /* Smooth transition on hover */
+  width: 100%; /* Set width to 100% */
+  height: 100%; /* Set height to 100% */
+display: flex;
+  justify-content: center;
+align-items: center;
+text-align: center;
+
+}
+
+.image-container:hover .text-overlay {
+  opacity: 1; /* Show the overlay on hover */
+}
+.frontpage h4{
+text-align: center;
+padding-top: 20%;
+}
+
+.image-container:hover{
+
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); /* Drop shadow styles */
+
+
+}
+ .image-main{
+padding-bottom: 5%;
+
+ }
+
+
+
+
+
+
+
+ /* NEW CSS */
+/* Close button visibility */
+.close-button {
+  position: absolute;
+  top: 5%; /* Increase this value to move it farther from the top */
+  right: 5%; /* Increase this value to move it farther from the right */
+  z-index: 1001; /* Adjust this value as needed */
+}
+
+/* Images inside buttons */
+.smallArt {
+  width: 100%; /* Set to 100% to fit within the button */
+  height: 100%; /* Maintain aspect ratio */
+  object-fit: cover; /* Fill available space */
+  border: none; /* Remove button border */
+  background: transparent; /* Transparent background */
+  padding: 0; /* No padding */
+}
+
+/* Additional styling for the artwork buttons */
+.artwork-button {
+width: 100%;
+height:100%;
+object-fit: cover;
+background-color: white;
+
+
+}
+
+
+
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  max-width: 100%; /* Set a maximum width */
+  max-height: 95vh; /* Set a maximum height based on viewport height */
+
+}
+.modal-content img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Maintain aspect ratio */
+}
+
+/* Padding Mystery Solved */
+.artwork-button, .artwork-button * {
+  padding: 0 !important;
+}
+
+.otw {
+margin: auto;
+text-align: center;
+text-decoration: none;
+color: green;
+
+}
+
+
+#recipe-container h2{
+padding-top: 10%;
+text-align: center;
+
+
+}
+
+ .joinUs h3, h4{text-align: center;}
+
+ .joinUs{
+  padding: 5%;
+ }
+
+ #where2, #where22{
+
+padding-bottom: 2%;
+
+ }
+ .social{
+display: flex;
+justify-content: center;
+
+ }
+ #otw{
+display: block;
+
+
+ }
